@@ -1,0 +1,35 @@
+<!-- <table mat-table>
+  <tr>
+    <th>Description</th>
+    <th>TEST</th> 
+    <th>TEST</th>
+    <th>test</th>
+  </tr>
+  <tr *ngFor="let order of orders">
+    <td>{{ order.description }}</td>
+    <td>{{ order.dueDate }}</td>
+    <td>{{ order.status }}</td>
+    <td>{{ order.act }}</td>
+  </tr>
+</table> -->
+
+<button (click)="getOrders()">Get Orders</button>
+
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let order of orders" 
+                       (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ order.description }}
+      </mat-panel-title>
+      <mat-panel-description>
+        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <hr>
+    <p>{{ order.address }}</p>
+    <p>{{ order.endCustomer }}</p>
+  </mat-expansion-panel>
+  
+</mat-accordion>
