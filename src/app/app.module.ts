@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule, MatExpansionModule } from '@angular/material';
+import { MatTableModule } from '@angular/material/table';
 
 
 import { AppComponent } from './app.component';
@@ -23,7 +24,8 @@ import { OrderComponent } from './order/order.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

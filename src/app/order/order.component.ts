@@ -9,13 +9,13 @@ import { OrderService } from '../order.service';
 })
 export class OrderComponent implements OnInit {
 
+  orders: any;
+
   constructor(private orderService: OrderService) {}
 
   ngOnInit() {
-  }
-
-  getOrders() {
-    console.log(this.orderService.getOrders());
+    this.orders = this.orderService.getOrders();
+    console.log(this.orders);
   }
 
 }
