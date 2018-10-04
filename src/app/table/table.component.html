@@ -1,120 +1,31 @@
-<!-- <div>{{testProperty}}</div> -->
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z1">
+  
+    <ng-container matColumnDef="orderNumber">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Order </th>
+      <td mat-cell *matCellDef="let order"> {{ order.orderNumber }} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+      <td mat-cell *matCellDef="let order"> {{ order.name }} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="PON">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> PON </th>
+      <td mat-cell *matCellDef="let order"> {{ order.PON }}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="endCustomer">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> End Customer </th>
+      <td mat-cell *matCellDef="let order"> {{ order.endCustomer }}</td>
+    </ng-container>
 
-<button (click)="convertTable()">Export table as CSV</button>
-<a href="test-table" id="download-anchor" download="test-table.csv" style="display: none;"></a>
-<!-- <a href="test-table.csv" id="download-anchor" download="test-table.csv" style="display: none;"></a> -->
-
-<!--
-<p>Test 2: <button id="btnExport" onclick="javascript:xport.toCSV('testTable');"> Export to CSV</button> <em>&nbsp;&nbsp;&nbsp;Export the table to CSV for all browsers</em></p>
--->
-
-<table id="{{ tableId }}" summary="Code page support in different versions of MS Windows." rules="groups" frame="hsides" border="2" class="table table-striped">
-  <caption>CODE-PAGE SUPPORT IN MICROSOFT WINDOWS</caption>
-  <colgroup></colgroup>
-  <colgroup></colgroup>
-  <colgroup></colgroup>
-  <colgroup></colgroup>
-  <thead valign="top">
-    <tr>
-      <th>Code-Page<br>ID</th>
-      <th>Name</th>
-      <th>ACP</th>
-      <th>OEMCP</th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1200</td>
-      <td>Windows 3.11</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>1250</td>
-      <td>Windows 3.1 Eastern European</td>
-      <td>X</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>1251</td>
-      <td>Windows 3.1 Cyrillic</td>
-      <td>X</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>1252</td>
-      <td>Windows 3.1 US (ANSI)</td>
-      <td>X</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>1253</td>
-      <td>Windows 3.1 Greek</td>
-      <td>X</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>1254</td>
-      <td>Windows 3.1 Turkish</td>
-      <td>X</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>1255</td>
-      <td>Hebrew</td>
-      <td>X</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>1256</td>
-      <td>Arabic</td>
-      <td>X</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>1257</td>
-      <td>Baltic</td>
-      <td>X</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>1361</td>
-      <td>Korean (Johab)</td>
-      <td>X</td>
-      <td></td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td>437</td>
-      <td>MS-DOS United States</td>
-      <td></td>
-      <td>X</td>
-    </tr>
-    <tr>
-      <td>708</td>
-      <td>Arabic (ASMO 708)</td>
-      <td></td>
-      <td>X</td>
-    </tr>
-    <tr>
-      <td>709</td>
-      <td>Arabic (ASMO 449+, BCON V4)</td>
-      <td></td>
-      <td>X</td>
-    </tr>
-    <tr>
-      <td>710</td>
-      <td>Arabic (Transparent Arabic)</td>
-      <td></td>
-      <td>X</td>
-    </tr>
-    <tr>
-      <td>720</td>
-      <td>Arabic (Transparent ASMO)</td>
-      <td></td>
-      <td>X</td>
-    </tr>
-  </tbody>
-</table>
+    <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Due Date </th>
+        <td mat-cell *matCellDef="let order"> {{ order.date | date : 'shortDate' }}</td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  

@@ -1,63 +1,37 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+export interface PeriodicElement {
+  name: string;
+  orderNumber: string;
+  PON: number;
+  endCustomer: string;
+  date: string;
+}
+
+const ORDER_DATA: PeriodicElement[] = [
+  {orderNumber: '1243234ATT', name: 'ABC123', PON: 14353479, endCustomer: 'ABC Corp', date: 'Thu Oct 04 2018 17:31:24 GMT-0400'},
+  {orderNumber: '2243234ATT', name: 'XYZ98765', PON: 45256, endCustomer: 'Company Name LLC', date: 'Mon Nov 05 2018 17:31:24 GMT-0400'},
+  {orderNumber: '3243234ATT', name: 'QRSTUV12', PON: 456541, endCustomer: 'Test Inc.', date: 'Fri Oct 05 2018 17:31:24 GMT-0400'},
+  {orderNumber: '4243234ATT', name: 'BET678', PON: 903722, endCustomer: 'Best Company', date: 'Thu Oct 04 2018 17:31:24 GMT-0400'},
+  {orderNumber: '5243234ATT', name: 'ZYX9898', PON: 6576511, endCustomer: 'Test Services Inc.', date: 'Sat Oct 06 2018 17:31:24 GMT-0400'},
+];
+
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css']
 })
-export class TableComponent implements OnInit {
-  @Input() testProperty : string = 'shared property';
 
-  tableId: string  = 'test-table';
-  fileName: string = '';
-  fullFileName: string = `${this.fileName}`;
+export class TableComponent implements OnInit {
+
+  // not all columns have to be displayed- you can easily control them here
+  displayedColumns: string[] = ['orderNumber', 'name', 'PON', 'endCustomer', 'date'];
+  dataSource = ORDER_DATA;
 
   constructor() {
-    console.log('constructor');
-    
   }
 
   ngOnInit() {
-    console.log('ngOnInit');
   }
 
-  convertTable(){
-    const table = document.getElementById('test-table');    
-    var csv = this.tableToCSV(table);    
-    var blob = new Blob([csv], {type: "text/csv"});    
-    this.downloadAnchor(URL.createObjectURL(blob), 'csv');    
-  }
-
-  tableToCSV(table) {
-    var slice = Array.prototype.slice;
-
-    var converted =
-     slice
-      .call(table.rows)
-      .map(function(row) {
-        return slice
-          .call(row.cells)
-          .map(function(cell) {
-            return '"t"'.replace("t", cell.textContent);
-          })
-          .join(",");
-      })
-      .join("\r\n");
-    return converted;
-  }
-
-  downloadAnchor(content, extension) {
-    var anchor = document.getElementById("download-anchor");
-    this.fullFileName = content + '.' + extension;
-    setTimeout(function(){ anchor.click(); }, 1000);    
-  }
 }
-
-// lifecycle
-// ngOnChanges - when change in input property
-// ngOnInit - executed once component has initialized
-// ngDoCheck - runs when change detection runs
-// ngAfterContentInit - called after content projected into view
-// ngAfterViewInit - component's views initialized
-// ngAfterViewChecked - view has been checked
-// ngOnDestroy - right before component is destroyed

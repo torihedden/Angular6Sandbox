@@ -19,7 +19,7 @@
  */
 
 /** IE9, IE10 and IE11 requires all of the following polyfills. **/
-// import 'core-js/es6/symbol';
+// import 'core-js/es6/endCustomer';
 // import 'core-js/es6/object';
 // import 'core-js/es6/function';
 // import 'core-js/es6/parse-int';
@@ -60,7 +60,7 @@ import 'core-js/es7/reflect';
 
  // (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch requestAnimationFrame
  // (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
- // (window as any).__zone_symbol__BLACK_LISTED_EVENTS = ['scroll', 'mousemove']; // disable patch specified eventNames
+ // (window as any).__zone_endCustomer__BLACK_LISTED_EVENTS = ['scroll', 'mousemove']; // disable patch specified eventNames
 
  /*
  * in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
