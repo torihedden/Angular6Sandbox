@@ -4,14 +4,14 @@
                        (closed)="panelOpenState = false">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        {{ order.description }}
+        {{ order.orderNumber }}
       </mat-panel-title>
       <mat-panel-description>
-        {{ order.commonId }}
+        {{ order.name }}
       </mat-panel-description>
     </mat-expansion-panel-header>
     <hr>
-    <p>{{ order.address }}</p>
+    <p>{{ order.PON }}</p>
     <p>{{ order.endCustomer }}</p>
   </mat-expansion-panel>
 </mat-accordion>

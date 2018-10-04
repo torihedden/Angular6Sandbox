@@ -1,39 +1,39 @@
-{"orders" : [
-    {
-      "description": "test",
-      "dueDate": "12312018",
-      "status": "NRT",
-      "act": "N",
-      "PON": "123456789",
-      "ASR": "17181920",
-      "ICSC": "ABCD",
-      "endCustomer": "Test Company, Inc.",
-      "address": "4625 Creekstone Drive, NC",
-      "commonId": "12312314564562"
-    }, 
-    {
-      "description": "test order",
-      "dueDate": "12312018",
-      "status": "PRT",
-      "act": "N",
-      "PON": "123456789",
-      "ASR": "17181920",
-      "ICSC": "ABCD",
-      "endCustome": "Test Company, Inc.",
-      "address": "4625 Creekstone Drive, NC",
-      "commonId": "12312312"
-    },
-    {
-      "description": "test",
-      "dueDate": "12312018",
-      "status": "NRT",
-      "act": "N",
-      "PON": "123456789",
-      "ASR": "17181920",
-      "ICSC": "ABCD",
-      "endCustomer": "Test Company, Inc.",
-      "address": "4625 Creekstone Drive, NC",
-      "commonId": "12312314564562"
-    }
+{  
+  "orders":[  
+     {  
+        "orderNumber":"1243234ATT",
+        "name":"ABC123",
+        "PON":14353479,
+        "endCustomer":"ABC Corporation",
+        "date":"Thu Oct 04 2018 17:31:24 GMT-0400"
+     },
+     {  
+        "orderNumber":"2243234ATT",
+        "name":"XYZ98765",
+        "PON":45256,
+        "endCustomer":"Company Name LLC",
+        "date":"Mon Nov 05 2018 17:31:24 GMT-0400"
+     },
+     {  
+        "orderNumber":"3243234ATT",
+        "name":"QRSTUV12",
+        "PON":456541,
+        "endCustomer":"Test Inc.",
+        "date":"Fri Oct 05 2018 17:31:24 GMT-0400"
+     },
+     {  
+        "orderNumber":"4243234ATT",
+        "name":"BET678",
+        "PON":903722,
+        "endCustomer":"Best Company",
+        "date":"Thu Oct 04 2018 17:31:24 GMT-0400"
+     },
+     {  
+        "orderNumber":"5243234ATT",
+        "name":"ZYX9898",
+        "PON":6576511,
+        "endCustomer":"Test Services Inc.",
+        "date":"Sat Oct 06 2018 17:31:24 GMT-0400"
+     }
   ]
 }

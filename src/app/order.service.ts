@@ -13,6 +13,8 @@ export class OrderService {
   constructor(private http: HttpClient) { }
 
   getOrders() {
-    return this.http.get(this.ordersURL).pipe(map(data => data['orders']));
+    return this.http
+      .get(this.ordersURL)
+      .pipe(map(data => data['orders']));
   }
 }
