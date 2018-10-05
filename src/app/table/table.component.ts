@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { OrderService } from '../order.service';
-import { MatSort, MatTableDataSource } from '@angular/material';
+import { MatSort, MatTableDataSource, MatPaginator } from '@angular/material';
 
 export interface Orders {
   KeyId: number;
@@ -30,6 +30,7 @@ export class TableComponent implements OnInit {
   dataSource = new MatTableDataSource(orderData);
 
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private orderService: OrderService) {
   }
@@ -44,6 +45,8 @@ export class TableComponent implements OnInit {
     })   
     
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+
   }
 
 }
