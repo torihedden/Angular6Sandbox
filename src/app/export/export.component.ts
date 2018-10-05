@@ -14,7 +14,7 @@ export class ExportComponent implements OnInit {
   ngOnInit() {
   }
 
-  // exporting the table data to xls begins with trying to convert it to csv
+  // exporting the table data to xls begins with trying to convert it to some usable data type, such as csv
   // utilize the raw data returned from orderService and convert it to csv
   // remember, all http calls, requests for data, etc. should go in a service.
   // components should consume services. components should not make http requests, but only deal with displaying the data returned from them
