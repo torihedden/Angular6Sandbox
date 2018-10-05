@@ -1,13 +1,38 @@
 <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z1">
   
-    <ng-container matColumnDef="orderNumber">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Order </th>
-      <td mat-cell *matCellDef="let order"> {{ order.orderNumber }} </td>
+    <ng-container matColumnDef="KeyId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+      <td mat-cell *matCellDef="let order"> {{ order.KeyId }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Source">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Source </th>
+        <td mat-cell *matCellDef="let order"> {{ order.Source }} </td>
+      </ng-container>
+
+    <ng-container matColumnDef="ASR">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ASR </th>
+      <td mat-cell *matCellDef="let order"> {{ order.ASR }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ICSC">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ICSC </th>
+      <td mat-cell *matCellDef="let order"> {{ order.ICSC }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="STATUS">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> STATUS </th>
+      <td mat-cell *matCellDef="let order"> {{ order.STATUS }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="CUSTOMER_DEFINED_STATE">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> State </th>
+      <td mat-cell *matCellDef="let order"> {{ order.CUSTOMER_DEFINED_STATE }} </td>
     </ng-container>
   
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-      <td mat-cell *matCellDef="let order"> {{ order.name }} </td>
+    <ng-container matColumnDef="ACNA">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ACNA </th>
+      <td mat-cell *matCellDef="let order"> {{ order.ACNA }} </td>
     </ng-container>
   
     <ng-container matColumnDef="PON">
@@ -15,14 +40,14 @@
       <td mat-cell *matCellDef="let order"> {{ order.PON }}</td>
     </ng-container>
   
-    <ng-container matColumnDef="endCustomer">
+    <ng-container matColumnDef="END_CUSTOMER">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> End Customer </th>
-      <td mat-cell *matCellDef="let order"> {{ order.endCustomer }}</td>
+      <td mat-cell *matCellDef="let order"> {{ order.END_CUSTOMER }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="date">
+    <ng-container matColumnDef="DD">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Due Date </th>
-        <td mat-cell *matCellDef="let order"> {{ order.date | date : 'shortDate' }}</td>
+        <td mat-cell *matCellDef="let order"> {{ order.DD | date : 'shortDate' }}</td>
       </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

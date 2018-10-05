@@ -15,6 +15,8 @@ export class OrderService {
   getOrders() {
     return this.http
       .get(this.ordersURL)
-      .pipe(map(data => data['orders']));
+      .pipe(map(data => {
+        return data['orders']
+      }));
   }
 }

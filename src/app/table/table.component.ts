@@ -3,11 +3,16 @@ import { OrderService } from '../order.service';
 import { MatSort, MatTableDataSource } from '@angular/material';
 
 export interface Orders {
-  name: string;
-  orderNumber: string;
+  KeyId: number;
+  Source: string;
+  ASR: string;
   PON: number;
-  endCustomer: string;
-  date: string;
+  ICSC: string;
+  STATUS: string;
+  DD: Date;
+  END_CUSTOMER: string;
+  CUSTOMER_DEFINED_STATE: string;
+  ACNA: string;
 }
 
 let orderData: Orders[] = [];
@@ -21,7 +26,7 @@ let orderData: Orders[] = [];
 
 export class TableComponent implements OnInit {
 
-  displayedColumns: string[] = ['orderNumber', 'name', 'PON', 'endCustomer', 'date'];
+  displayedColumns: string[] = ['KeyId', 'Source', 'ASR', 'PON', 'ICSC', 'STATUS', 'DD', 'END_CUSTOMER', 'CUSTOMER_DEFINED_STATE', 'ACNA' ];
   dataSource = new MatTableDataSource(orderData);
 
   @ViewChild(MatSort) sort: MatSort;
@@ -33,6 +38,9 @@ export class TableComponent implements OnInit {
     
     this.orderService.getOrders().subscribe(data => {
       this.dataSource.data = data;
+      this.dataSource.data.map(entry => {
+        entry.DD = new Date(entry.DD);
+      })      
     })   
     
     this.dataSource.sort = this.sort;
