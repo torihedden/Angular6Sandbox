@@ -38,6 +38,8 @@ export class TableComponent implements OnInit {
   ngOnInit() {
     this.orderService.getOrders().subscribe(data => {
       this.dataSource.data = data;
+      
+      // convert the date strings to actual Date objects
       this.dataSource.data.map(entry => {
         entry.DD = new Date(entry.DD);
       })      
