@@ -13,6 +13,7 @@ import { TableComponent } from './table/table.component';
 import { OrderComponent } from './order/order.component';
 import { SearchComponent } from './search/search.component';
 import { ExportComponent } from './export/export.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ExportComponent } from './export/export.component';
     TableComponent,
     OrderComponent,
     SearchComponent,
-    ExportComponent
+    ExportComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

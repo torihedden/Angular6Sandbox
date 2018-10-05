@@ -16,6 +16,8 @@ export class ExportComponent implements OnInit {
 
   // exporting the table data to xls begins with trying to convert it to csv
   // utilize the raw data returned from orderService and convert it to csv
+  // remember, all http calls, requests for data, etc. should go in a service.
+  // components should consume services. components should not make http requests, but only deal with displaying the data returned from them
   exportTable() {
     this.orderService.getOrders().subscribe(data => {
       const csv = this.convertToCSV(data);

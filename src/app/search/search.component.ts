@@ -15,9 +15,13 @@ export class SearchComponent implements OnInit {
   }
 
   searchOrders(searchTerm: string) {
-    searchTerm = searchTerm.trim();
-    searchTerm = searchTerm.toLowerCase();
-    this.dataSource.filter = searchTerm;
+    console.log('searched');
+    
+    // searchTerm = searchTerm.trim();
+    // searchTerm = searchTerm.toLowerCase();
+    // this.dataSource.filter = searchTerm;
   }
 
 }
+
+  // this component is currently not working - TODO
