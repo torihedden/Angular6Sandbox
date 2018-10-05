@@ -1,12 +1,14 @@
-import { TestBed } from '@angular/core/testing';
+// ************************ service has been moved to app/services ************************
 
-import { OrderService } from './order.service';
+// import { TestBed } from '@angular/core/testing';
 
-describe('OrderService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+// import { OrderService } from './order.service';
 
-  it('should be created', () => {
-    const service: OrderService = TestBed.get(OrderService);
-    expect(service).toBeTruthy();
-  });
-});
+// describe('OrderService', () => {
+//   beforeEach(() => TestBed.configureTestingModule({}));
+
+//   it('should be created', () => {
+//     const service: OrderService = TestBed.get(OrderService);
+//     expect(service).toBeTruthy();
+//   });
+// });

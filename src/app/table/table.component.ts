@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { OrderService } from '../order.service';
+import { OrderService } from '../services/order.service';
 import { MatSort, MatTableDataSource, MatPaginator } from '@angular/material';
 
 export interface Orders {
@@ -45,12 +45,6 @@ export class TableComponent implements OnInit {
     
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-  }
-
-  searchOrders(searchTerm: string) {
-    searchTerm = searchTerm.trim();
-    searchTerm = searchTerm.toLowerCase();
-    this.dataSource.filter = searchTerm;
   }
 
 }
