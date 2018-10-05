@@ -1,3 +1,5 @@
+<input type="text" (keyup)="searchOrders($event.target.value)">
+
 <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z1">
   
     <ng-container matColumnDef="KeyId">

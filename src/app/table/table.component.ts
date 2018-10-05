@@ -36,7 +36,6 @@ export class TableComponent implements OnInit {
   }
 
   ngOnInit() {
-    
     this.orderService.getOrders().subscribe(data => {
       this.dataSource.data = data;
       this.dataSource.data.map(entry => {
@@ -46,7 +45,12 @@ export class TableComponent implements OnInit {
     
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
+  }
 
+  searchOrders(searchTerm: string) {
+    searchTerm = searchTerm.trim();
+    searchTerm = searchTerm.toLowerCase();
+    this.dataSource.filter = searchTerm;
   }
 
 }

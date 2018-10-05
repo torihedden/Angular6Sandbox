@@ -4,19 +4,19 @@
                        (closed)="panelOpenState = false">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        {{ order.orderNumber }}
+        {{ order.END_CUSTOMER }}
       </mat-panel-title>
       <mat-panel-description>
-        {{ order.name }}
+        {{ order.Source }}
       </mat-panel-description>
     </mat-expansion-panel-header>
     <hr>
     <p>{{ order.PON }}</p>
-    <p>{{ order.endCustomer }}</p>
+    <p>{{ order.ASR }}</p>
   </mat-expansion-panel>
 </mat-accordion>
 
 <!-- 
-  TO DO: convert to data table, 
-  figure out how to incorporate panel expansion
+  TO DO: figure out how to incorporate panel expansion into the table
+  This component is currently not part of the demo app core funtionality
 -->
