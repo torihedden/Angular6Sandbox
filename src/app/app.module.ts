@@ -11,12 +11,16 @@ import { MatSortModule } from '@angular/material/sort';
 import { AppComponent } from './app.component';
 import { TableComponent } from './table/table.component';
 import { OrderComponent } from './order/order.component';
+import { SearchComponent } from './search/search.component';
+import { ExportComponent } from './export/export.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
-    OrderComponent
+    OrderComponent,
+    SearchComponent,
+    ExportComponent
   ],
   imports: [
     BrowserModule,

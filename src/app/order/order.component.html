@@ -1,4 +1,4 @@
-<mat-accordion>
+<mat-accordion multi="true">
   <mat-expansion-panel *ngFor="let order of orders" 
                        (opened)="panelOpenState = true"
                        (closed)="panelOpenState = false">
