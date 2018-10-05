@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { OrderService } from '../order.service';
+import { MatSort, MatTableDataSource } from '@angular/material';
 
 export interface Orders {
   name: string;
@@ -20,19 +21,21 @@ let orderData: Orders[] = [];
 
 export class TableComponent implements OnInit {
 
-  // not all columns have to be displayed
-  // you can easily control them here
-  // while even still leaving them in the .html template
   displayedColumns: string[] = ['orderNumber', 'name', 'PON', 'endCustomer', 'date'];
-  dataSource = orderData;
+  dataSource = new MatTableDataSource(orderData);
+
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(private orderService: OrderService) {
   }
 
   ngOnInit() {
+    
     this.orderService.getOrders().subscribe(data => {
-      this.dataSource = data;
+      this.dataSource.data = data;
     })   
+    
+    this.dataSource.sort = this.sort;
   }
 
 }

@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule, MatExpansionModule } from '@angular/material';
 import { MatTableModule } from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
 
 
 import { AppComponent } from './app.component';
@@ -25,7 +26,8 @@ import { OrderComponent } from './order/order.component';
     MatButtonModule,
     MatCheckboxModule,
     MatExpansionModule,
-    MatTableModule
+    MatTableModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
