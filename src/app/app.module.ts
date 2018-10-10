@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule, MatExpansionModule, MatPaginatorModule, MatToolbarModule } from '@angular/material';
-import { MatTableModule } from '@angular/material/table';
-import { MatSortModule } from '@angular/material/sort';
+// import { MatButtonModule, MatCheckboxModule, MatExpansionModule, MatPaginatorModule, MatToolbarModule } from '@angular/material';
+// import { MatTableModule } from '@angular/material/table';
+// import { MatSortModule } from '@angular/material/sort';
 
 
 import { AppComponent } from './app.component';
@@ -14,8 +14,9 @@ import { OrderComponent } from './order/order.component';
 import { SearchComponent } from './search/search.component';
 import { ExportComponent } from './export/export.component';
 import { FooterComponent } from './footer/footer.component';
-import { AbsFlyoutModule } from 'abs-components-se';
-import { AbsTagbadgeModule } from 'abs-components-bc';
+import { AbsFormsModule, AbsNavModule, AbsFooterModule, BcNavModule, AbsTablesModule, AbsUtilitiesModule } from 'abs-components-bc';
+import { TableSortTestComponent } from './table-sort-test/table-sort-test.component';
+import { HeaderTestComponent } from './header-test/header-test.component';
 
 @NgModule({
   declarations: [
@@ -24,22 +25,27 @@ import { AbsTagbadgeModule } from 'abs-components-bc';
     OrderComponent,
     SearchComponent,
     ExportComponent,
-    FooterComponent
+    FooterComponent,
+    TableSortTestComponent,
+    HeaderTestComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatExpansionModule,
-    MatTableModule,
-    MatSortModule,
-    MatPaginatorModule,
-    MatToolbarModule,
-    AbsFlyoutModule,
-    AbsTagbadgeModule
+    // MatButtonModule,
+    // MatCheckboxModule,
+    // MatExpansionModule,
+    // MatTableModule,
+    // MatSortModule,
+    // MatPaginatorModule,
+    // MatToolbarModule,
+    AbsTablesModule,
+    AbsFormsModule,
+    AbsNavModule,
+    AbsFooterModule,
+    BcNavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

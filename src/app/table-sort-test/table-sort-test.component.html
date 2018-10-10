@@ -1,0 +1,57 @@
+<abs-tables [tableData]="tableData" [sortingConfig]="tableSortingConfig" [tableHeader]="tableDataHeader" class="tableData">
+<thead>
+  <!-- <th abs-table-header>Id</th> -->
+  <th abs-table-header [sortable]="true" [sortableContent]="tableDataHeader[0].value">{{tableDataHeader[0].text}}</th>
+  <th abs-table-header [sortable]="true" [sortableContent]="tableDataHeader[1].value">{{tableDataHeader[1].text}}</th>
+  <th abs-table-header [sortable]="true" [sortableContent]="tableDataHeader[2].value">{{tableDataHeader[2].text}}</th>
+  <th abs-table-header>Exapnd/Collapse</th>
+</thead>
+<tbody *ngFor="let rowData of tableData | orderBy: convertTableSorting();let $index=index">
+  <tr>
+    <!-- <td>{{$index}}</td> -->
+    <td>{{rowData.c1Data}}</td>
+    <td>{{rowData.c2Data}}</td>
+    <td>{{rowData.c3Data}}</td>
+    <td style="text-align: center;">
+      <i [attr.aria-label]="rowData.hidden? 'Expand row '+$index: 'Collapse row '+$index" [attr.aria-expanded]="!rowData.hidden" [ngClass]="{'icon-down':rowData.hidden,'icon-controls-up': !rowData.hidden }" class="icon-down" role="button" abs-accessibility-click="13,32" tabindex="0" (click)="rowData.hidden = !rowData.hidden"></i></td>
+  </tr>
+  <tr [hidden]="rowData.hidden" class="rowDetails">
+    <td>&nbsp;</td>
+    <td colspan="4">
+      <div class="row">
+        <div class="col-md-3">
+          <p class="font-medium">
+            Attribute label
+          </p>
+          <p>
+            value
+          </p>
+        </div>
+        <div class="col-md-3">
+          <p class="font-medium">
+            Attribute label
+          </p>
+          <p>
+            value
+          </p>
+        </div>
+        <div class="col-md-3">
+          <p class="font-medium">
+            Attribute label
+          </p>
+          <p>
+            value
+          </p>
+        </div>
+        <div class="col-md-3">
+          <p class="font-medium">
+            Attribute label
+          </p>
+          <p>
+            value
+          </p>
+        </div>
+      </div>
+    </td>
+</tbody>
+</abs-tables>

@@ -27,32 +27,125 @@ let orderData: Orders[] = [];
 
 export class TableComponent implements OnInit {
 
-  displayedColumns: string[] = ['KeyId', 'Source', 'ASR', 'PON', 'ICSC', 'STATUS', 'DD', 'END_CUSTOMER', 'CUSTOMER_DEFINED_STATE', 'ACNA', 'export' ];
-  dataSource = new MatTableDataSource(orderData);
+  invoiceTableHeaderList: Array<Object>;
+  invoiceObject: Array<Object>;
+  tableBreakpoints: Array<Object>;
 
-  @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-
-  constructor(private orderService: OrderService) {
-  }
-
-  ngOnInit() {
-    this.orderService.getOrders().subscribe(data => {
-      this.dataSource.data = data;
-      
-      // convert the date strings to actual Date objects
-      this.dataSource.data.map(entry => {
-        entry.DD = new Date(entry.DD);
-        entry.export = 'Export order';
-      })      
-    })   
-    
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-  }
-
-  exportSingleOrder(orderNum) {
-    console.log(this.dataSource.data[orderNum - 1]);
-  }
+ngOnInit() {
+    this.invoiceTableHeaderList = [
+        {"value":"accountNumber","text":"Account number"},
+        {"value":"label","text":"Account label"},
+        {"value":"date","text":"Invoice date"},
+        {"value":"invoiceNumber","text":"Invoice number"},
+        {"value":"service","text":"Service"},
+        {"value":"currentCharges","text":"Current charges"},
+        {"value":"adjustments","text":"Payments / Adjustments"},
+        {"value":"previousBalance","text":"Previous balance"},
+        {"value":"totalAmount","text":"Invoice amount"}
+    ];
+    this.invoiceObject=[
+        {
+            "accountNumber": "155874744",
+            "label": "Sony Europe Ltd.",
+            "date": "June 10, 2015",
+            "invoiceNumber": "55434992111033",
+            "service": 'AT&T',
+            "currentCharges": '$253.00',
+            "adjustments": '$0.00',
+            "previousBalance": '$0.00',
+            "totalAmount": '$253.00'
+        }, {
+            "accountNumber": "145658788",
+            "label": "GMIS - England",
+            "date": "May 6, 2015",
+            "invoiceNumber": "43384992115477",
+            "service": 'AT&T',
+            "currentCharges": '$154.32',
+            "adjustments": '$0.00',
+            "previousBalance": '$0.00',
+            "totalAmount": '$154.32'
+        }, {
+            "accountNumber": "155874744",
+            "label": "Sony Europe Ltd.",
+            "date": "June 10, 2015",
+            "invoiceNumber": "55434992111033",
+            "service": 'AT&T',
+            "currentCharges": '$253.00',
+            "adjustments": '$0.00',
+            "previousBalance": '$0.00',
+            "totalAmount": '$253.00'
+        }, {
+            "accountNumber": "145658788",
+            "label": "GMIS - England",
+            "date": "May 6, 2015",
+            "invoiceNumber": "43384992115477",
+            "service": 'AT&T',
+            "currentCharges": '$154.32',
+            "adjustments": '$0.00',
+            "previousBalance": '$0.00',
+            "totalAmount": '$154.32'
+        }, {
+            "accountNumber": "155874744",
+            "label": "Sony Europe Ltd.",
+            "date": "June 10, 2015",
+            "invoiceNumber": "55434992111033",
+            "service": 'AT&T',
+            "currentCharges": '$253.00',
+            "adjustments": '$0.00',
+            "previousBalance": '$0.00',
+            "totalAmount": '$253.00'
+        }, {
+            "accountNumber": "145658788",
+            "label": "GMIS - England",
+            "date": "May 6, 2015",
+            "invoiceNumber": "43384992115477",
+            "service": 'AT&T',
+            "currentCharges": '$154.32',
+            "adjustments": '$0.00',
+            "previousBalance": '$0.00',
+            "totalAmount": '$154.32'
+        }, {
+            "accountNumber": "155874744",
+            "label": "Sony Europe Ltd.",
+            "date": "June 10, 2015",
+            "invoiceNumber": "55434992111033",
+            "service": 'AT&T',
+            "currentCharges": '$253.00',
+            "adjustments": '$0.00',
+            "previousBalance": '$0.00',
+            "totalAmount": '$253.00'
+        }, {
+            "accountNumber": "145658788",
+            "label": "GMIS - England",
+            "date": "May 6, 2015",
+            "invoiceNumber": "43384992115477",
+            "service": 'AT&T',
+            "currentCharges": '$154.32',
+            "adjustments": '$0.00',
+            "previousBalance": '$0.00',
+            "totalAmount": '$154.32'
+        }, {
+            "accountNumber": "155874744",
+            "label": "Sony Europe Ltd.",
+            "date": "June 10, 2015",
+            "invoiceNumber": "55434992111033",
+            "service": 'AT&T',
+            "currentCharges": '$253.00',
+            "adjustments": '$0.00',
+            "previousBalance": '$0.00',
+            "totalAmount": '$253.00'
+        }, {
+            "accountNumber": "145658788",
+            "label": "GMIS - England",
+            "date": "May 6, 2015",
+            "invoiceNumber": "43384992115477",
+            "service": 'AT&T',
+            "currentCharges": '$154.32',
+            "adjustments": '$0.00',
+            "previousBalance": '$0.00',
+            "totalAmount": '$154.32'
+        }
+    ];
+}
 
 }
