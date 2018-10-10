@@ -1,0 +1,35 @@
+<div>
+  <div class="abs-numericResult" tabindex="-1" style="margin-bottom: 20px;font-size: 1.6rem;margin-top: 20px;">{{((currentPageIndex-1)*viewPerPage)+1}}-{{(currentPageIndex)*viewPerPage}} of {{fullTableData.length}}</div>
+  <abs-tables [tableData]="fullTableData" [tableHeader]="tableHeader">
+      <thead>
+          <tr>
+          <th id="heading1" role="columnheader"  key="0" abs-table-header [priority]="0">{{tableHeader[0]}}</th>
+          <th id="heading2" role="columnheader"  key="1" abs-table-header [priority]="2">{{tableHeader[1]}}</th>
+          <th id="heading3" role="columnheader"  key="0" abs-table-header [priority]="0">{{tableHeader[0]}}</th>
+          <th id="heading4" role="columnheader"  key="1" abs-table-header [priority]="2">{{tableHeader[1]}}</th>
+          </tr>
+      </thead>
+      <tbody class="accordion-table-layout">
+          <tr abs-responsive-row [isSummary]="false" [responsive]="false" [rowData]="rowData" *ngFor="let rowData of tableData ;let $index=index " type="body" >
+          <td abs-table-body headers="rowheader_t5_{{$index}}" scope="row" role="rowheader">
+              <a href="javascript:void(0)" title="{{rowData.requestId}}">{{rowData.requestId}}</a></td>
+          <td abs-table-body headers="rowheader_t5_{{$index}}" abs-table-body >{{rowData.requestType}}</td>
+          <td abs-table-body headers="rowheader_t5_{{$index}}" abs-table-body >{{rowData.requestor}}</td>
+          <td abs-table-body headers="rowheader_t5_{{$index}}" abs-table-body >{{rowData.user}}</td>
+          </tr>
+      </tbody>
+  </abs-tables>
+   <div>
+      <label class="mt5" for="itemsPerPage">Items per page</label>
+  </div>
+  <div class="block" style="display:block">
+      <div style="width:160px;margin-top:5px;display:inline-block">
+          <div class="field-group">
+              <abs-dropdown [drId]="'dropdown1'" [drName]="'dropdown1'"  [optionRepeat]="dropdownOptions1" (dropdownValueChange)="changePagesNumber($event)" ngDefaultControl> </abs-dropdown>
+          </div>
+      </div>
+      <div class="b2b-page pull-right" style="display:inline-block">
+          <abs-pagination id="pagination6" [inputClass]="inputClass1" class="abs-pager"  [totalPages]="totalPages6" [(currentPage)]="currentPage6" (clickHandler)="handlePageChange1($event)"></abs-pagination>
+      </div>
+  </div>  
+</div>

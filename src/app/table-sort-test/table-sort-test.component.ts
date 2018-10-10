@@ -45,9 +45,10 @@ ngOnInit() {
             descending: false
         };
         this.tableData = [
-            { "c1Data": "Column A", "c2Data": "Column 2A", "c3Data": "Column 3A", "c4Data": "Column 4", "c5Data": "Column 5", "c6Data": "Column 6", "hidden": true },
-            { "c1Data": "Column B", "c2Data": "Column 2B", "c3Data": "Column 3C", "c4Data": "Column 4", "c5Data": "Column 5", "c6Data": "Column 6", "hidden": true },
-            { "c1Data": "Column C", "c2Data": "Column 2C", "c3Data": "Column 3B", "c4Data": "Column 4", "c5Data": "Column 5", "c6Data": "Column 6", "hidden": true }
+            { "c1Data": "Column C", "c2Data": "Column 2C", "c3Data": "Column 3C", "c4Data": "Column 4", "c5Data": "Column 5", "c6Data": "Column 6", "hidden": true },
+            { "c1Data": "Column B", "c2Data": "Column 2B", "c3Data": "Column 3B", "c4Data": "Column 4", "c5Data": "Column 5", "c6Data": "Column 6", "hidden": true },
+            { "c1Data": "D", "c2Data": "DD", "c3Data": "DDD", "c4Data": "DDDD", "c5Data": "DDDDD", "c6Data": "DDDDDD", "hidden": true },
+            { "c1Data": "Column A", "c2Data": "Column 2A", "c3Data": "Column 3A", "c4Data": "Column 4", "c5Data": "Column 5", "c6Data": "Column 6", "hidden": true }
         ];
     this.tableDataSummary = [
         {

@@ -14,9 +14,10 @@ import { OrderComponent } from './order/order.component';
 import { SearchComponent } from './search/search.component';
 import { ExportComponent } from './export/export.component';
 import { FooterComponent } from './footer/footer.component';
-import { AbsFormsModule, AbsNavModule, AbsFooterModule, BcNavModule, AbsTablesModule, AbsUtilitiesModule } from 'abs-components-bc';
+import { AbsFormsModule, AbsNavModule, AbsFooterModule, BcNavModule, AbsTablesModule, AbsUtilitiesModule, AbsDropdownModule, AbsPaginationModule } from 'abs-components-bc';
 import { TableSortTestComponent } from './table-sort-test/table-sort-test.component';
 import { HeaderTestComponent } from './header-test/header-test.component';
+import { TablePaginationComponent } from './table-pagination/table-pagination.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HeaderTestComponent } from './header-test/header-test.component';
     ExportComponent,
     FooterComponent,
     TableSortTestComponent,
-    HeaderTestComponent
+    HeaderTestComponent,
+    TablePaginationComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,10 @@ import { HeaderTestComponent } from './header-test/header-test.component';
     AbsFormsModule,
     AbsNavModule,
     AbsFooterModule,
-    BcNavModule
+    BcNavModule,
+    AbsUtilitiesModule,
+    AbsDropdownModule,
+    AbsPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
