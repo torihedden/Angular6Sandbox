@@ -22,6 +22,8 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
+    "abs-components-bc": "http://mavencentral.it.att.com:8084/nexus/content/repositories/npm-attebiz/abs-components-bc/-/abs-components-bc-1.1.19.tgz",
+    "abs-components-se": "http://mavencentral.it.att.com:8084/nexus/content/repositories/npm-attebiz/abs-components-se/-/abs-components-se-1.1.19.tgz",
     "core-js": "^2.5.4",
     "rxjs": "~6.2.0",
     "zone.js": "~0.8.26"

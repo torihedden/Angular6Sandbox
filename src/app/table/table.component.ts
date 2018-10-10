@@ -13,6 +13,7 @@ export interface Orders {
   END_CUSTOMER: string;
   CUSTOMER_DEFINED_STATE: string;
   ACNA: string;
+  export: string;
 }
 
 let orderData: Orders[] = [];
@@ -26,7 +27,7 @@ let orderData: Orders[] = [];
 
 export class TableComponent implements OnInit {
 
-  displayedColumns: string[] = ['KeyId', 'Source', 'ASR', 'PON', 'ICSC', 'STATUS', 'DD', 'END_CUSTOMER', 'CUSTOMER_DEFINED_STATE', 'ACNA' ];
+  displayedColumns: string[] = ['KeyId', 'Source', 'ASR', 'PON', 'ICSC', 'STATUS', 'DD', 'END_CUSTOMER', 'CUSTOMER_DEFINED_STATE', 'ACNA', 'export' ];
   dataSource = new MatTableDataSource(orderData);
 
   @ViewChild(MatSort) sort: MatSort;
@@ -42,11 +43,16 @@ export class TableComponent implements OnInit {
       // convert the date strings to actual Date objects
       this.dataSource.data.map(entry => {
         entry.DD = new Date(entry.DD);
+        entry.export = 'Export order';
       })      
     })   
     
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
+  }
+
+  exportSingleOrder(orderNum) {
+    console.log(this.dataSource.data[orderNum - 1]);
   }
 
 }

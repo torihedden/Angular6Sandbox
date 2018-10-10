@@ -14,6 +14,8 @@ import { OrderComponent } from './order/order.component';
 import { SearchComponent } from './search/search.component';
 import { ExportComponent } from './export/export.component';
 import { FooterComponent } from './footer/footer.component';
+import { AbsFlyoutModule } from 'abs-components-se';
+import { AbsTagbadgeModule } from 'abs-components-bc';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { FooterComponent } from './footer/footer.component';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    MatToolbarModule
+    MatToolbarModule,
+    AbsFlyoutModule,
+    AbsTagbadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

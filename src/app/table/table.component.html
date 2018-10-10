@@ -6,9 +6,9 @@
     </ng-container>
 
     <ng-container matColumnDef="Source">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Source </th>
-        <td mat-cell *matCellDef="let order"> {{ order.Source }} </td>
-      </ng-container>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Source </th>
+      <td mat-cell *matCellDef="let order"> {{ order.Source }} </td>
+    </ng-container>
 
     <ng-container matColumnDef="ASR">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> ASR </th>
@@ -46,9 +46,14 @@
     </ng-container>
 
     <ng-container matColumnDef="DD">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Due Date </th>
-        <td mat-cell *matCellDef="let order"> {{ order.DD | date : 'shortDate' }}</td>
-      </ng-container>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Due Date </th>
+      <td mat-cell *matCellDef="let order"> {{ order.DD | date : 'shortDate' }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="export">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let order"> <button mat-flat-button color="accent" (click)="exportSingleOrder(order.KeyId)">{{ order.export }} {{ order.KeyId }}</button></td>
+    </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
