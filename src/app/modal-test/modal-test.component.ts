@@ -3,7 +3,9 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 export interface DialogData {
   inquiryReason: string;
-  name: string;
+  // name: string;
+  customerReason: string;
+  reasons: string[];
 }
 
 /**
@@ -17,14 +19,22 @@ export interface DialogData {
 export class ModalTestComponent {
 
   inquiryReason: string;
-  name: string;
+  // name: string;
+
+  customerReason: string;
+  reasons: string[] = ['Inquiry', 'Not Ready', 'Order', 'Test'];
 
   constructor(public dialog: MatDialog) {}
 
   openDialog(): void {
     const dialogRef = this.dialog.open(ModalTestDialog, {
       width: '250px',
-      data: {name: this.name, inquiryReason: this.inquiryReason}
+      data: {
+        // name: this.name,
+        inquiryReason: this.inquiryReason,
+        customerReason: this.customerReason,
+        reasons: this.reasons
+      }
     });
 
     dialogRef.afterClosed().subscribe(result => {
