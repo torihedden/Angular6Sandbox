@@ -14,6 +14,7 @@ export interface Orders {
   CUSTOMER_DEFINED_STATE: string;
   ACNA: string;
   export: string;
+  modal: string;
 }
 
 let orderData: Orders[] = [];
@@ -27,7 +28,7 @@ let orderData: Orders[] = [];
 
 export class TableComponent implements OnInit {
 
-  displayedColumns: string[] = ['KeyId', 'Source', 'ASR', 'PON', 'ICSC', 'STATUS', 'DD', 'END_CUSTOMER', 'CUSTOMER_DEFINED_STATE', 'ACNA', 'export' ];
+  displayedColumns: string[] = ['KeyId', 'Source', 'ASR', 'PON', 'ICSC', 'STATUS', 'DD', 'END_CUSTOMER', 'CUSTOMER_DEFINED_STATE', 'ACNA', 'export', 'modal' ];
   dataSource = new MatTableDataSource(orderData);
 
   @ViewChild(MatSort) sort: MatSort;

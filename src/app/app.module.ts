@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule, MatExpansionModule, MatPaginatorModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatExpansionModule, MatPaginatorModule, MatToolbarModule, MatDialogModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 
@@ -16,6 +16,7 @@ import { ExportComponent } from './export/export.component';
 import { FooterComponent } from './footer/footer.component';
 import { AbsFlyoutModule } from 'abs-components-se';
 import { AbsTagbadgeModule } from 'abs-components-bc';
+import { ModalTestComponent, ModalTestDialog } from './modal-test/modal-test.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { AbsTagbadgeModule } from 'abs-components-bc';
     OrderComponent,
     SearchComponent,
     ExportComponent,
-    FooterComponent
+    FooterComponent,
+    ModalTestComponent,
+    ModalTestDialog
   ],
   imports: [
     BrowserModule,
@@ -39,8 +42,12 @@ import { AbsTagbadgeModule } from 'abs-components-bc';
     MatPaginatorModule,
     MatToolbarModule,
     AbsFlyoutModule,
-    AbsTagbadgeModule
+    AbsTagbadgeModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule 
   ],
+  entryComponents: [ModalTestDialog,  ModalTestComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

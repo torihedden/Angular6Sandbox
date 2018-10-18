@@ -54,6 +54,11 @@
       <th mat-header-cell *matHeaderCellDef> Actions </th>
       <td mat-cell *matCellDef="let order"> <button  (click)="exportSingleOrder(order.KeyId)">{{ order.export }} {{ order.KeyId }}</button></td>
     </ng-container>
+
+    <ng-container matColumnDef="modal">
+      <th mat-header-cell *matHeaderCellDef> Launch modal </th>
+      <td mat-cell *matCellDef="let order"> <button>Test modal</button></td>
+    </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
