@@ -1,11 +1,15 @@
 import {Component, Inject} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { OrderService } from '../services/order.service';
 
 export interface DialogData {
   inquiryReason: string;
   // name: string;
   customerReason: string;
   reasons: string[];
+
+  // the id from the order. this is to test how to pass data from the orderservice to the modal component
+  id: string;
 }
 
 /**
@@ -15,7 +19,9 @@ export interface DialogData {
   selector: 'app-modal-test',
   templateUrl: 'modal-test.component.html',
   styleUrls: ['modal-test.component.css'],
+  providers: [OrderService]
 })
+
 export class ModalTestComponent {
 
   inquiryReason: string;
@@ -24,7 +30,9 @@ export class ModalTestComponent {
   customerReason: string;
   reasons: string[] = ['Inquiry', 'Not Ready', 'Order', 'Test'];
 
-  constructor(public dialog: MatDialog) {}
+  id: string = '#';
+
+  constructor(public dialog: MatDialog, private orderService: OrderService) {}
 
   openDialog(): void {
     const dialogRef = this.dialog.open(ModalTestDialog, {
@@ -33,7 +41,8 @@ export class ModalTestComponent {
         // name: this.name,
         inquiryReason: this.inquiryReason,
         customerReason: this.customerReason,
-        reasons: this.reasons
+        reasons: this.reasons,
+        id: this.id
       }
     });
 
@@ -41,6 +50,11 @@ export class ModalTestComponent {
       console.log('The dialog was closed');
       this.inquiryReason = result;
     });
+  }
+
+  getOrderIdentifiers() {
+    // don't initiate another call to the order service. that's breaking the app
+    // try to pass the order data from the table component instead
   }
 
 }
@@ -57,7 +71,7 @@ export class ModalTestDialog {
     public dialogRef: MatDialogRef<ModalTestDialog>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
 
-  onNoClick(): void {
+  onCancelClick(): void {
     this.dialogRef.close();
   }
 
