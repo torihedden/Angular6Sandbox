@@ -38,3 +38,20 @@ input:checked + label {
   background: black;
   color: white;
 }
+
+.mat-dialog-title {
+  text-transform: uppercase;
+}
+
+.mat-dialog-content {
+  border: solid 1px red;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.dialog-contents {
+  border: solid 1px blue;
+  width: 50%;
+}

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule, MatExpansionModule, MatPaginatorModule, MatToolbarModule, MatDialogModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatRadioModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatExpansionModule, MatPaginatorModule, MatToolbarModule, MatDialogModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatRadioModule, MatGridListModule } from '@angular/material';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 
@@ -47,7 +47,8 @@ import { ModalTestComponent, ModalTestDialog } from './modal-test/modal-test.com
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatRadioModule 
+    MatRadioModule,
+    MatGridListModule
   ],
   entryComponents: [ModalTestDialog,  ModalTestComponent],
   providers: [],

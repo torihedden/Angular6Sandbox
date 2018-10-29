@@ -21,7 +21,6 @@ export interface DialogData {
 
 export class ModalTestComponent {
 
-
   inquiryReason: string;
   customerReason: string;
   reasons: string[] = ['Inquiry', 'Not Ready', 'Order', 'Test'];
@@ -31,7 +30,7 @@ export class ModalTestComponent {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(ModalTestDialog, {
-      width: '250px',
+      width: '50vw',
       data: {
         // name: this.name,
         inquiryReason: this.inquiryReason,
