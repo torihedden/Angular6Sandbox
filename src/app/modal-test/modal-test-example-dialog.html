@@ -2,11 +2,17 @@
 <div mat-dialog-content>
         <p>Inquiry Reason</p>
     <!-- We likely do not have to use material components for the radio group and textarea. We can't use select element because that doesn't allow all values to be visible at once -->
-    <mat-radio-group class="example-radio-group" [(ngModel)]="data.customerReason">
+    <!-- <mat-radio-group class="example-radio-group" [(ngModel)]="data.customerReason">
         <mat-radio-button class="example-radio-button" *ngFor="let reason of data.reasons" [value]="data.reason">
             {{ reason }}
         </mat-radio-button>
-    </mat-radio-group>
+    </mat-radio-group> -->
+    <div class="wrapper">
+        <div *ngFor="let reason of data.reasons">
+            <input type="radio" value="{{ reason }}" name="radio" id="{{ reason }}">
+            <label for="{{ reason }}">{{ reason }}</label>
+        </div>
+    </div>
     <mat-form-field>
         <p>Remarks</p>
         <textarea matInput [(ngModel)]="data.inquiryReason" maxlength="250"></textarea>

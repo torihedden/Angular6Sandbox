@@ -1,4 +1,4 @@
-import {Component, Inject} from '@angular/core';
+import {Component, Inject, Input} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { OrderService } from '../services/order.service';
 
@@ -12,9 +12,6 @@ export interface DialogData {
   id: string;
 }
 
-/**
- * @title Dialog Overview
- */
 @Component({
   selector: 'app-modal-test',
   templateUrl: 'modal-test.component.html',
@@ -24,12 +21,10 @@ export interface DialogData {
 
 export class ModalTestComponent {
 
-  inquiryReason: string;
-  // name: string;
 
+  inquiryReason: string;
   customerReason: string;
   reasons: string[] = ['Inquiry', 'Not Ready', 'Order', 'Test'];
-
   id: string = '#';
 
   constructor(public dialog: MatDialog, private orderService: OrderService) {}

@@ -62,6 +62,7 @@
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <!-- <tr mat-row *matRowDef="let row; columns: [testData]; when: true">Single order information</tr> -->
   </table>
   
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>

@@ -1,16 +1,40 @@
 textarea {
-    border: solid 1px black;
+  border: solid 1px black;
 }
 
 .example-radio-group {
-    display: inline-flex;
-    flex-direction: column;
-  }
+  display: inline-flex;
+  flex-direction: column;
+}
   
-  .example-radio-button {
-    margin: 5px;
-  }
+.example-radio-button {
+  margin: 5px;
+}
   
-  .example-selected-value {
-    margin: 15px 0;
-  }
+.example-selected-value {
+  margin: 15px 0;
+}
+
+.wrapper {
+  border: solid 1px gray;  
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+p {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+input {
+  visibility: hidden;
+}
+
+label {
+  display: block;
+  padding: 5px;
+  margin-top: -20px;
+}
+
+input:checked + label {
+  background: black;
+  color: white;
+}

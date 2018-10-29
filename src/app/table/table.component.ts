@@ -19,6 +19,8 @@ export interface Orders {
 
 let orderData: Orders[] = [];
 
+let testData: Object = {'data': 'test string'};
+
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -27,15 +29,14 @@ let orderData: Orders[] = [];
 })
 
 export class TableComponent implements OnInit {
-
+  
   displayedColumns: string[] = ['KeyId', 'Source', 'ASR', 'PON', 'ICSC', 'STATUS', 'DD', 'END_CUSTOMER', 'CUSTOMER_DEFINED_STATE', 'ACNA', 'export', 'modal' ];
   dataSource = new MatTableDataSource(orderData);
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(private orderService: OrderService) {
-  }
+  constructor(private orderService: OrderService) { }
 
   ngOnInit() {
     this.orderService.getOrders().subscribe(data => {
