@@ -23,7 +23,7 @@ export class ModalTestComponent {
 
   inquiryReason: string;
   customerReason: string;
-  reasons: string[] = ['Inquiry', 'Not Ready', 'Order', 'Test'];
+  reasons: string[] = ['Order', 'Not Ready', 'Order 2', 'Test', 'Test 2', 'Test 3', 'Test 4'];
   id: string = '#';
 
   constructor(public dialog: MatDialog, private orderService: OrderService) {}
