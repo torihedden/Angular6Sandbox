@@ -1,0 +1,47 @@
+<!--
+  Template-drive approach to Angular forms.
+  Angular will not automatically detect the inputs in a form.
+  Register form controls via 'ngModel' on the input element.
+  Set the local reference to the form on the form element.
+-->
+<form (ngSubmit)="onSubmit(form)" #form="ngForm">
+  <div id="user-data">
+    <div>
+      <label for="username">Username</label>
+      <!-- this input is actually a control of the form -->
+      <input
+        type="text"
+        id="username"
+        ngModel
+        name="username"
+        required>
+    </div>
+    <button class="btn btn-default" type="button">Generate Username</button>
+    <div>
+      <label for="email">Email</label>
+      <input
+        type="email" 
+        id="email" 
+        ngModel
+        name="email"
+        email>
+        <!-- email is directive available to Angular -->
+    </div>
+  </div>
+  <div>
+    <label for="secret">Secret Questions</label>
+    <select
+      id="secret"
+      ngModel
+      name="secret">
+      <option value="pet">Your first Pet?</option>
+      <option value="teacher">Your first teacher?</option>
+    </select>
+  </div>
+  <!--
+    The default behavior of HTML on type submit buttons in form elements, this will submit the form already.
+    There is no need to place a click event on this submit button.
+    See the ngSubmit directive placed on the form element instead.
+  -->
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>

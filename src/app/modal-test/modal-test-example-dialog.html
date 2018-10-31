@@ -4,14 +4,14 @@
             <p>Inquiry Reason</p>
             <div class="wrapper">
                 <div *ngFor="let reason of data.reasons">
-                    <input type="radio" value="{{ reason }}" name="radio" id="{{ reason }}">
-                    <label for="{{ reason }}">{{ reason }}</label>
+                    <input type="radio" value="{{ reason.reasonText }}" name="radio" id="{{ reason.id }}" [checked]=reason.checked>
+                    <label for="{{ reason.id }}">{{ reason.reasonText }}</label>
                 </div>
             </div>
     </div>
     <div class="dialog-contents">
         <p>Remarks</p>
-        <textarea></textarea>
+        <textarea maxlength="250"></textarea>
     </div>
 </div>
 <div mat-dialog-actions>

@@ -17,6 +17,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AbsFlyoutModule } from 'abs-components-se';
 import { AbsTagbadgeModule } from 'abs-components-bc';
 import { ModalTestComponent, ModalTestDialog } from './modal-test/modal-test.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ModalTestComponent, ModalTestDialog } from './modal-test/modal-test.com
     ExportComponent,
     FooterComponent,
     ModalTestComponent,
-    ModalTestDialog
+    ModalTestDialog,
+    FormComponent
   ],
   imports: [
     BrowserModule,

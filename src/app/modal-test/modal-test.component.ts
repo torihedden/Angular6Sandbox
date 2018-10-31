@@ -6,7 +6,7 @@ export interface DialogData {
   inquiryReason: string;
   // name: string;
   customerReason: string;
-  reasons: string[];
+  reasons: any;
 
   // the id from the order. this is to test how to pass data from the orderservice to the modal component
   id: string;
@@ -23,7 +23,22 @@ export class ModalTestComponent {
 
   inquiryReason: string;
   customerReason: string;
-  reasons: string[] = ['Order', 'Not Ready', 'Order 2', 'Test', 'Test 2', 'Test 3', 'Test 4'];
+  // reasons: string[] = ['Order', 'Not Ready', 'Order 2', 'Test', 'Test 2', 'Test 3', 'Test 4'];
+  reasons: any = [
+    {
+      reasonText: 'Order',
+      id: 'order',
+      checked: true
+    }, 
+    {
+      reasonText: 'Not Ready', 
+      id: 'not-ready'
+    },
+    {
+      reasonText: 'Order 2', 
+      id: 'order-2'
+    }
+  ];
   id: string = '#';
 
   constructor(public dialog: MatDialog, private orderService: OrderService) {}
