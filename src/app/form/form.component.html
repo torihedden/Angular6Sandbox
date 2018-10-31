@@ -4,6 +4,7 @@
   Register form controls via 'ngModel' on the input element.
   Set the local reference to the form on the form element.
 -->
+<h3>Template-Driven Example</h3>
 <form (ngSubmit)="onSubmit(form)" #form="ngForm">
   <div id="user-data">
     <div>
@@ -16,7 +17,10 @@
         name="username"
         required>
     </div>
-    <button class="btn btn-default" type="button">Generate Username</button>
+    <button
+      class="btn btn-default"
+      type="button"
+      (click)="suggestUserName()">Generate Username</button>
     <div>
       <label for="email">Email</label>
       <input
@@ -24,8 +28,12 @@
         id="email" 
         ngModel
         name="email"
-        email>
+        email
+        required
+        #registrationEmail="ngModel">
         <!-- email is directive available to Angular -->
+
+        <p *ngIf="!registrationEmail.valid && registrationEmail.touched">Please enter a valid email.</p>
     </div>
   </div>
   <div>
@@ -38,10 +46,25 @@
       <option value="teacher">Your first teacher?</option>
     </select>
   </div>
+  <div *ngFor="let language of language">
+    <label for="{{ language }}">
+      <input
+        type="radio"
+        name="language"
+        ngModel
+        [value]="language"
+        id="{{ language }}"
+        required>
+        {{ language }}
+    </label>
+  </div>
   <!--
     The default behavior of HTML on type submit buttons in form elements, this will submit the form already.
     There is no need to place a click event on this submit button.
     See the ngSubmit directive placed on the form element instead.
   -->
-  <button class="btn btn-primary" type="submit">Submit</button>
+  <button
+    class="btn btn-primary"
+    type="submit"
+    [disabled]="!form.valid">Submit</button>
 </form>

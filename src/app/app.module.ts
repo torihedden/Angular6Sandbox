@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule, MatExpansionModule, MatPaginatorModule, MatToolbarModule, MatDialogModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatRadioModule, MatGridListModule } from '@angular/material';
@@ -18,6 +18,7 @@ import { AbsFlyoutModule } from 'abs-components-se';
 import { AbsTagbadgeModule } from 'abs-components-bc';
 import { ModalTestComponent, ModalTestDialog } from './modal-test/modal-test.component';
 import { FormComponent } from './form/form.component';
+import { FormReactiveComponent } from './form-reactive/form-reactive.component';
 
 @NgModule({
   declarations: [
@@ -29,11 +30,13 @@ import { FormComponent } from './form/form.component';
     FooterComponent,
     ModalTestComponent,
     ModalTestDialog,
-    FormComponent
+    FormComponent,
+    FormReactiveComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,

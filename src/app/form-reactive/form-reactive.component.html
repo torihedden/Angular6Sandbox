@@ -1,0 +1,28 @@
+<h3>Reactive Form Example</h3>
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <!-- reference the property created on the component (signupForm property) -->
+  <div>
+    <label for="username">Username</label>
+    <input
+      type="text"
+      id="username"
+      formControlName="username">
+  </div>
+  <p *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched">Please enter a valid username.</p>
+  <div>
+    <label for="email">email</label>
+    <input
+      type="text"
+      id="email"
+      formControlName="email">
+  </div>
+  <div class="radio" *ngFor="let gender of genders">
+    <label>
+      <input
+        type="radio"
+        formControlName="gender"
+        [value]="gender">{{ gender }}
+    </label>
+  </div>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>
