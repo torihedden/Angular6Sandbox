@@ -30,10 +30,16 @@ export class AccordionComponent implements OnInit {
     return this.isExpanded = !this.isExpanded;
   }
 
-  checkOpenStatus(event) {   
-    return event;    
+  setAccordionStatus() {
+    let allPanels = document.querySelectorAll(".mat-expansion-panel").length;
+    let openPanels = document.querySelectorAll(".mat-expansion-panel-spacing").length;
+
+    if (openPanels === allPanels) {
+      this.isExpanded = true;
+    } 
+
+    if (openPanels === 0) {
+      this.isExpanded = false;
+    }
   }
 }
-
-
-// _stateChanges.observers[2].destination.destination.closed
