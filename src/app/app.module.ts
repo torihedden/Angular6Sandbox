@@ -19,6 +19,7 @@ import { AbsTagbadgeModule } from 'abs-components-bc';
 import { ModalTestComponent, ModalTestDialog } from './modal-test/modal-test.component';
 import { FormComponent } from './form/form.component';
 import { FormReactiveComponent } from './form-reactive/form-reactive.component';
+import { AccordionComponent } from './accordion/accordion.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FormReactiveComponent } from './form-reactive/form-reactive.component';
     ModalTestComponent,
     ModalTestDialog,
     FormComponent,
-    FormReactiveComponent
+    FormReactiveComponent,
+    AccordionComponent
   ],
   imports: [
     BrowserModule,

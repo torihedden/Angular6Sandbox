@@ -9,17 +9,24 @@ export class SearchComponent implements OnInit {
 
   dataSource;
 
+  products = ['tori', 'kathryn', 'caitlin', 'katie'];
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  searchOrders(searchTerm: string) {
-    console.log('searched');
-    
-    // searchTerm = searchTerm.trim();
-    // searchTerm = searchTerm.toLowerCase();
-    // this.dataSource.filter = searchTerm;
+  // applyFilter(filterValue: string) {
+  //   filterValue = filterValue.trim(); // Remove whitespace
+  //   filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
+  //   this.dataSource.filter = filterValue;
+  // }
+
+  searchOrders(searchTerm) {
+    console.log(searchTerm);
+    searchTerm = searchTerm.trim();
+    searchTerm = searchTerm.toLowerCase();
+    this.products.filter = searchTerm;
   }
 
 }
